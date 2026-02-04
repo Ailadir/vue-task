@@ -1,0 +1,15 @@
+export type AccountType = 'LDAP' | 'Локальная'
+
+export const ACCOUNT_TYPES: AccountType[] = ['LDAP', 'Локальная']
+
+export interface AccountLabel {
+  text: string
+}
+
+export interface Account {
+  id: string
+  labels: AccountLabel[]
+  type: AccountType
+  login: string
+  password: string | null
+}
