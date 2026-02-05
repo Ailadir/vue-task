@@ -1,28 +1,28 @@
 <template>
   <v-row align="center">
-    <v-col cols="3">
+    <v-col cols="12" sm="3">
       <BaseInput v-model="rawLabel" label="Метки" :max-length="50" @blur="handleBlur" />
     </v-col>
 
-    <v-col cols="2">
+    <v-col cols="12" sm="2">
       <BaseSelect :model-value="localType" :items="ACCOUNT_TYPES" label="Тип записи"
         @update:model-value="handleTypeChange" />
     </v-col>
 
-    <v-col cols="3">
+    <v-col cols="12" sm="3">
       <BaseInput v-model="localLogin" label="Логин" :error="touched.login && !!validationErrors.login"
         :error-messages="touched.login && validationErrors.login ? [validationErrors.login] : []" :max-length="100"
         @blur="handleLoginBlur" />
     </v-col>
 
-    <v-col cols="3">
+    <v-col cols="12" sm="3">
       <BaseInput v-if="localType === 'Локальная'" v-model="localPassword" label="Пароль" :is-password="true"
         :error="touched.password && !!validationErrors.password"
         :error-messages="touched.password && validationErrors.password ? [validationErrors.password] : []"
         :max-length="100" @blur="handlePasswordBlur" />
     </v-col>
 
-    <v-col cols="1" class="d-flex align-center">
+    <v-col cols="12" sm="1" class="d-flex align-center">
       <IconButton icon="mdi-delete" @click="handleDelete" />
     </v-col>
   </v-row>
